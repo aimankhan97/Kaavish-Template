@@ -6,9 +6,16 @@
 
 \usepackage[titletoc]{appendix} % for adding appendix to TOC
 \usepackage{biblatex}  % reference management
-\usepackage{geometry}  % better margins and margin control
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}  % better margins and margin control
 \usepackage{graphicx}  % to include figures
+\usepackage{subfigure}
+%\usepackage{float}
+%\usepackage{textcomp}
+%\usepackage{enumitem}
+\usepackage{parskip}
+
 \usepackage{hyperref}  % internal and external links
+\hypersetup{ colorlinks, citecolor=green, filecolor=black, linkcolor=blue, urlcolor=blue } 
 \usepackage[utf8]{inputenc}  % support for non-ASCII characters
 \usepackage{listings}  % typset code
 \usepackage{outlines}  % easy nesting of lists
@@ -30,7 +37,7 @@
 \addbibresource{references.bib}
 
 % Replace with your title
-\title{Chhoti Si Kaavish}
+\title{AEGIS: Virtual Self-Defense Trainer}
 
 % Allow recalling document title
 % from https://tex.stackexchange.com/a/15806/44301

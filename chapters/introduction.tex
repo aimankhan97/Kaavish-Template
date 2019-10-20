@@ -1,15 +1,51 @@
 \section{Problem Statement}
 
-This section explains the problem we are solving and our motivation to do so.
+There is a need to provide a system for people who don’t have access to self-defense institutes such that it is accessible and provides feedback for improvement.
 
+\subsection{Problem Definition}
+
+The cases of violence against women are adding up every day; it is happening in nearly all parts of the world. Pakistan has been ranked as the sixth most dangerous country for women in the world after India, Afghanistan, Syria, Somalia and Saudi Arabia \cite{poll2018}. A major reason for this is the alarmingly high rates of domestic violence in the country \cite{domesticViolence}. Pakistan has been ranked fifth for non-sexual violence against women including domestic abuse \cite{poll2018}. From 2008 to 2014, the cases of violence against women increased by 33\% \cite{domesticViolence}. A study shows that almost 80\% of women experience domestic abuse \cite{genderBasedViolence}.  Apart from domestic violence, 93\% women experience some form of sexual violence in public places in their lifetime \cite{sexualViolence} and Pakistan has been ranked seventh in cases of sexual violence and harassment \cite{poll2018}. In such situations, we need to make sure women are safe everywhere. Unfortunately the conditions of our society cannot be improved very quickly. Therefore we need to equip them with self-defence skills so that they can take care of themselves and no one can harm them.
+
+
+\subsection{Project Relevance to Society}
+
+We are interested in providing self-defence training through a virtual trainer because self-defence classes not only teach skills for preventing and responding to violence \cite{hollander}, they also have other positive effects on women’s lives like making them less vulnerable to violence and strengthening their physical capabilities, extending their mobility and promoting their independence \cite{selfDefenseMovement}. A study conducted on women students of self-defence classes shows that in addition to increased confidence in potentially dangerous situations, the women (students of self-defence classes) reported more comfortable interactions with strangers, acquaintances and intimates \cite{hollander}. They also reported positive feelings about their bodies and increased self-confidence and transformed beliefs about the gender, rejecting the idea of women as the weaker sex, incapable of protecting themselves \cite{hollander}. The statements given in the problem description also supports the relevance of our project with the society.
+
+To gather our own data, we conducted an initial survey and limited our research to Karachi and Hyderabad for now. While there are schools and centres for martial arts and self-defence training in Karachi, people were generally reluctant to attend them. The interview/questionnaire we designed asked safety concerns inside and outside their house, any prior knowledge of self-defence, and what restricted them from learning self defence techniques if they never received any self-defence training. Our sample size is 122 people. 57.4\% of the survey population were females, the majority of which comprise of young adults pursuing undergraduate studies. For confidentiality names and emails of the interviewees will not be shared here.
+
+70.1\% of the people who participated in this survey do feel concerned about their safety when travelling alone.  Almost 92\% of the people think that having self-defence skills can/might help them feel safer but 73.8\% of the people never received any self defence training at all. 83.3\% of this 73.8\% of the population wanted to learn self defence skills but could not learn. One of the major reasons for not attending a self defence school is that for 81.3\% of this population, there was no such institution near their locality; 18.7\%  of the people also had permission issues to attend such institutes and people also responded that they could not afford the fee cost. When asked why people could not learn from online videos, 60\% responded that they faced a lack of motivation to start or keep up with the goals. Most of the people also said that it is impossible for them to learn without intact with a humanoid form, and also online courses provide no feedback of how they are performing. Lack of motivation, financial issues and family constraints deterred people from attending classes. Only 26.23\% people had previously taken self defence classes. 43.8\% of those who learned it rated their experience as a \(\frac{3}{4}\), while 34.4\% rated their experience as a \(\frac{2}{5}\). And 79.1\% people who took self defence classes mentioned that it has/might have impacted their lives in a positive way as the secondary research shows. Most of the people left taking these classes because their either their family did not allow them to attend such a school anymore or they could not afford the fee cost anymore or both. Also, some people responded that they did not feel comfortable in the presence of male instructor.  All of the above helps us in strengthening our idea further and gives us an initial confidence in the potential of our idea. 
 \section{Proposed Solution}
 
-This section gives a summary of our proposed solution, i.e. how does it solve the problem? An overview of the system is provided. A detailed description of each module of the system is presented later in Chapter ~\ref{chap:intro}.
+We are designing a virtual self-defence training software that can teach people these skills anywhere and anytime. It will be a computer program designed to train them just like a real trainer in an adaptive teaching style. By adaptive, we mean that it relies on feedback of how well the user is performing and focus on areas the system thinks the user is performing poorly. It also incorporates motion tracking, that can give them user feedback on their performance in real-time. With integrated haptics in the form of a wearable, they will also be able to interact with the virtual world (e.g. they will feel punches by the virtual trainer or the impact of the attack, etc.). The wearable is meant to transform their interaction with the virtual world to give a more realistic experience that any online course would never be able to give them. It will tentatively consist of glove(s) and some extra modules which will be worn on hands and/or arms. This would be a one time investment. The user can be saved from monthly fees as well as software patent fees.
 
 \section{Intended User}
 
-This section outlines the target users of this system. The different types of users in our user base and their interaction with the system are described briefly.
+This project is for all those who wish to gain fundamental self-defense skills and techniques to help them gain confidence, boost self-esteem, and learn and practice defense moves with a virtual trainer in a training environment. 
+
+Despite it being user-friendly, we recommend the usage of this project to be limited to those between the ages 15 to 35. Individuals with any sort of metal implants, heart diseases, or in a state of pregnancy or menstruation should not use this product with haptic suit.
 
 \section{Key Challenges}
 
-This section mentions the key challenges that we foresee in this project and possible ways to address them.
+\subsection{Software Challenges}
+\begin{enumerate}
+  \item For pose evaluation and pose classification, it is important to figure out when a pose has started and when it has ended. 
+  
+  \item For better performance of pose evaluation and pose classification algorithms, we need to know all the important and valuable features that should be extracted.
+  
+  \item The presence of blind spots while working with camera is another challenge (if the user goes out of the scope of the camera). Potential solutions include camera on a rotating servo base.
+  
+  \item Evaluating a person’s moves by assigning scores is a challenging and subjective task difficult for computers to handle. Human judges or trainers take into account a lot of things like age, body type etc while judging a person's performance. 
+  
+   \item Generating user feedback is an extremely challenging deliverable because translating stick figure data to natural language feedback can not be mapped as a one-to-one function. For example, if the ideal angle for elbow is \(x\) degrees, and the user poses with a deviation of 20 degrees, the computer should display the feedback as \textit{elbow slightly lower/higher than the correct pose}.
+\end{enumerate}
+\subsection{Hardware Challenges}
+\begin{enumerate}
+  \item Hardware has a lot of uncertainties to begin with (filters are used to decrease the uncertainties and noisy undesirable outputs). Minor fluctuations in voltage can produce undesirable outcomes, this can be solved via regulating the voltage input.
+  
+  \item A problem with using EMS (Electrical Muscle Stimulator) is that the commercially available tens machines do not give much flexibility. 
+  
+  \item Bodies are different in fat and tissue composition, so EMS sensations can vary from person to person.
+
+  \item Wired communications are difficult to handle on the wearable.
+  
+\end{enumerate}
