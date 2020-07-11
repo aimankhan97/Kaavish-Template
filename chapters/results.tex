@@ -1,1 +1,136 @@
-TBA.
+\section{Pose Evaluation Results on Angles}
+
+Angle Scores for video 4: 
+  \begin{enumerate}
+      \item 'right elbow': 0.8025153652097735, 
+      \item 'left elbow': 0.7391806013546279, 
+      \item 'right shoulder': 0.839144239263979, 
+      \item 'left shoulder': 0.8246632634131507, 
+      \item 'overall': 0.8013758673103827
+  \end{enumerate}
+
+  Angle Scores for video 6: 
+  \begin{enumerate}
+    \item 'right elbow': 0.9368570780248358, 
+    \item 'left elbow': 0.7822153018489785, 
+    \item 'right shoulder': 0.9357960950901351, 
+    \item 'left shoulder': 0.7147700852047657, 
+    \item 'overall': 0.8424096400421788
+  \end{enumerate}
+
+\begin{figure}[ht] 
+    \subfigure[Angle Results on Video 4]{% 
+      \includegraphics[scale=0.5]{images/graphs/angles_video4_good} \label{fig:video4_angles} 
+    } 
+   \quad 
+    \subfigure[Angle Results on Video 6]{% 
+      \includegraphics[scale=0.5]{images/graphs/angles_video6_good} \label{fig:video6_angles} 
+    } 
+    \caption{Angle Results on Good Videos} 
+    \centering
+    \label{fig:angles_good}
+  \end{figure}
+
+  Angle Scores for video 17: 
+  \begin{enumerate}
+      \item 'right elbow': 0.628917146659598, 
+      \item 'left elbow': 0.6475396937624317, 
+      \item 'right shoulder': 0.6398373397920147, 
+      \item 'left shoulder': 0.6015687895010977, 
+      \item 'overall': 0.6294657424287855
+  \end{enumerate}
+
+  Angle Scores for video 14: 
+  \begin{enumerate}
+      \item 'right elbow': 0.76486706531242, 
+      \item 'left elbow': 0.46757149659087116, 
+      \item 'right shoulder': 0.7364141153612161, 
+      \item 'left shoulder': 0.5766052103240107, 
+      \item 'overall': 0.6363644718971295
+  \end{enumerate}
+
+  \begin{figure}[ht] 
+    \subfigure[Angle Results on Video 14]{% 
+      \includegraphics[scale=0.5]{images/graphs/angles_video14_bad} \label{fig:video14_angles} 
+    } 
+   \quad 
+    \subfigure[Angle Results on Video 17]{% 
+      \includegraphics[scale=0.5]{images/graphs/angles_video17_bad} \label{fig:video17_angles} 
+    } 
+    \caption{Angle Results on Bad Videos Videos} 
+    \centering
+    \label{fig:angles_bad}
+  \end{figure}
+
+  \section{Pose Evaluation Results on Kinetic Energies}
+  \begin{figure}[ht] 
+    \subfigure[Kinetic Energy Results on Video 5 - Score: 83.5]{% 
+      \includegraphics[scale=0.5]{images/graphs/KE_video5_good} \label{fig:video5_KE} 
+    } 
+   \quad 
+    \subfigure[Kinetic Energy Results on Video 14 - Score: 62]{% 
+      \includegraphics[scale=0.5]{images/graphs/KE_video14_bad} \label{fig:video14_KE} 
+    } 
+    \caption{Kinetic Energy Results} 
+    \centering
+    \label{fig:KE_results}
+  \end{figure}
+
+\section{Classification Results}
+Following are the Classification Results:
+
+\begin{lstlisting}[language=python, showstringspaces=false,frame=single]
+    User Video: video1_good
+    average
+    ---------------------------------------------
+    User Video: video2_good
+    good
+    ---------------------------------------------
+    User Video: video3_good
+    average
+    ---------------------------------------------
+    User Video: video4_good
+    good
+    ---------------------------------------------
+    User Video: video5_good
+    good
+    ---------------------------------------------
+    User Video: video6_good
+    good
+    ---------------------------------------------
+    User Video: video8_average
+    good
+    ---------------------------------------------
+    User Video: video9_average
+    average
+    ---------------------------------------------
+    User Video: video10_average
+    average
+    ---------------------------------------------
+    User Video: video11_average
+    average
+    ---------------------------------------------
+    User Video: video12_average
+    average
+    ---------------------------------------------
+    User Video: video13_average
+    average
+    ---------------------------------------------
+    User Video: video14_bad
+    average
+    ---------------------------------------------
+    User Video: video15_bad
+    average
+    ---------------------------------------------
+    User Video: video16_bad
+    average
+    ---------------------------------------------
+    User Video: video17_bad
+    average
+    ---------------------------------------------
+    User Video: video18_bad
+    good
+    ---------------------------------------------
+    
+  
+  \end{lstlisting}

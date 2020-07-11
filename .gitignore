@@ -12,4 +12,15 @@
 **/*.run.xml
 **/*.toc
 **/auto
+*.xml
+*.gz
+*.fls
+*.fdb_latexmk
 
+*.depend
+*.layout
+*.exe
+**/.vscode/**
+**/bin/**
+*.cbp
+*.pdb

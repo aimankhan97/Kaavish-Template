@@ -4,6 +4,7 @@
 
 \documentclass[12pt,twosided]{report}
 
+\usepackage{amsmath,amsthm,amssymb}
 \usepackage[titletoc]{appendix} % for adding appendix to TOC
 \usepackage{biblatex}  % reference management
 \usepackage[left=2cm, right=2cm, top=2cm]{geometry}  % better margins and margin control
@@ -22,6 +23,33 @@
 \usepackage{tabularx}  % more control over table column width
 \usepackage{titlesec}  % customize chapter title 
 \usepackage{upquote}  % prevent mishandling of single quotes in listings
+\usepackage{xcolor}
+ 
+\newcommand{\mat}[1]{\boldsymbol { \mathsf{#1}} }
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
 
 
 % TODO: Customize the appearance of hyperref links using \hypersetup
@@ -38,7 +66,6 @@
 
 % Replace with your title
 \title{AEGIS: Virtual Self-Defense Trainer}
-
 % Allow recalling document title
 % from https://tex.stackexchange.com/a/15806/44301
 \makeatletter\let\Title\@title\makeatother  
@@ -49,19 +76,55 @@
 \include{approval}  % approval page.
 
 \chapter*{Dedication}
-For ammi, abbu, and pappu.
+
+\begin{center}
+    \textit{\LARGE Dedicated} \\ \bigskip
+    \textit{\Large To}
+
+    \bigskip
+
+    \textit{\large Our friends} \\
+    \textit{who were always there with us and kept us from sinking too deep. Their constant support in the spaces we shared and the time we spent was much needed and most welcome, especially the occasional teas and lunches. Thank you for all those random breaks for movies, monopoly deal, uno and tap-catch, and all those pizza parties. Cheers to our friendship, which is not less than a loving family.}
+
+    \bigskip
+
+    \textit{\large Our Parents} \\
+    \textit{Their support kept us going and gave us the strength to move forward.}
+\end{center}
+
 
 \chapter*{Acknowledgements}
-We want to thank the CS faculty and ...
+Although the list of people who made this project possible is very long, we have tried our best to acknowledge every individual and thank them. Anyone we forget is purely by mistake, which we regret, and we apologize for that.
+
+We extend our gratitude to Dr. Basit Memon and Dr. Waqar Saleem, our capstone advisors, guides and mentors for their unwavering support, amid countless difficulties, throughout this one-year project. 
+
+We would further like to extend our thanks to Ali Haider, Qasim Khan and Hasan Naqvi for helping us with making tutorial videos. We are also grateful to Mr. Ahmad Bilal, Mr. Haris Ali Siddique and Mr. Usama Waseem for helping us out with the logistics throughout the project.
+
+We would like to thank Osama Yousuf, Sami Murtaza, Muhammad Mursalin Larik, Muhammad Muneeb Shoaib, Syeda Samana Batool, Ayesha Shaikh,  Hassan Shakir, Minhaj Ahmed Moin, Marina Shehzad, Sehrish Altaf and Qasim Khan for allowing to test our calibration protocol on them. Thank you for being excited to get electrical pulses sent through to feel punches that were never there, to make our work come to life.
+%https://elc.polyu.edu.hk/FYP/html/ack.htm
+%check this
+
+%We thank our Class of 2020 especially DSSE, peers and friends, for being there with us and keeping us from sinking too deep. Thank you for being excited to get electrical pulses sent through to feel punches that were never there, to make our work come to life. Their constant
+%support in the spaces we shared and the time we spent was much needed and most
+%welcome, especially the occasional teas and lunches.
+
+%Lastly, we are grateful to our parents. Their support, kept us going, giving us the strength to move forward.
+
 
 \chapter*{Abstract}
-Abstract goes here
+Crime-rate and acts of physical violence in many countries including Pakistan are alarmingly high especially acts of violence against women. To ensure, self-safety, everyone must know atleast some very basic self-defense. But hiring personal trainers or attending self-defense institutes is very difficult for many people, and online courses are not much effective when learning self-defense because they offer no interactivity and feedback. Therefore, we are developing a virtual self-defense training software such that it offers all the benefits of a human trainer anywhere and anytime a user wants. 
 
+This project offers video tutorials and practice sessions for users to learn and practice self-defense skills. The performance during practice sessions is captured using a single RGB camera, which is used for pose estimation through openpose, an open source platform that uses convolutional neural network, and pose evaluation, which in turn provide feedback of the performance to the user for improvement. To make the session realistic, the user interacts with a virtual trainer via haptic feedback. Using low power electric pulses of different shapes and wave characteristics, muscles are stimulated. A major challenge is the varying anatomies of people. A single electrical signal characteristic cannot work for all the people. Therefore, a calibration protocol is needed, via which each user can set the desired signal parameters from a set of presets. The calibration is being done in signal characteristics as well as in the spatial placement of electrodes.
+
+\begin{flushleft}
+\textbf{KEYWORDS:} Haptics, self-defense, pose evaluation, virtual training, scoring, feedback, feature extraction
+\end{flushleft}
 % The following are automatically populated by LaTeX \chapter, \section and related, \figure, and \table.
 \tableofcontents
 \listoffigures
 \listoftables
 
+%\include{summary}
 % TODO: Put chapters in a separate folder named 'chapters'.
 
 \chapter{Introduction}
@@ -72,11 +135,11 @@ Abstract goes here
 \label{chap:lit}
 \input{chapters/review}
 
-\chapter{Software Requirement Specification (SRS)}
+\chapter{Software Requirement Specification}
 \label{chap:srs}
 \input{chapters/srs}
 
-\chapter{Software Design Specification (SDS)}
+\chapter{Software Design Specification}
 \label{chap:sds}
 \input{chapters/sds}
 
@@ -96,14 +159,17 @@ Abstract goes here
   
 % This appendix is optional.
 \chapter{More Math}
+\label{appendix:math}
 \input{chapters/appendix-math}
 
 % This appendix is required if the data set is not fully described in the main text.
 \chapter{Data}
+\label{appendix:data}
 \input{chapters/appendix-data}
 
 % This appendix is required if the code is not fully described in the main text.
 \chapter{Code}
+\label{appendix:code}
 \input{chapters/appendix-code}
 \end{appendices}
 
