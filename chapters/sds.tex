@@ -566,7 +566,28 @@ We classified each feature similarity score into categories good, average and ba
   \label{eq:classification}
 \end{align}
 
-These feature categories are used to generate feedback. From a phrases dictionary, the feedback for each feature is generated on the basis of its category, e.g. if angle features are categorized into 'good' category, then the phrases corresponding to good remarks about angles are outputted from the dictionary. 
+These feature categories are used to generate feedback. From a phrases dictionary, the feedback for each feature is generated on the basis of its category, e.g. if angle features are categorized into 'good' category, then the phrases corresponding to good remarks about angles are outputted from the dictionary. Below is an example output for a bad performance:
+
+
+\begin{lstlisting}
+Generating angle profile ... 
+	Your right elbow angles show that movement is done quite well.
+	Your left elbow angles seem just fine.
+	Your right shoulder angles show that movement is done quite well.
+	Your left shoulder angles are okasish.
+	Your overall score for combined angles was average
+
+Generating kinetic energy profile ... 
+	You were not able to produce enough energy during the motion. Try punching with more energy!
+
+Generating accelerance deceleration balance profile ... 
+	Right Wrist: Slow down your hand a little before punching/blocking, otherwise your hand might hurt!
+	Left Wrist: Slow down your hand a little before punching/blocking, otherwise your hand might hurt!
+	Your overall score for maintaining balance between acceleration and deceleration was bad
+
+Generating profile for back straightness ... 
+	Your back sufficiently straight. A straight back is important for a better body posture. A good posture produces more energy during motion.
+\end{lstlisting}
 
 The overall classification is also done on the basis of individual feature classification. Each feature contains a pre-defined weight. To classify the overall performance, it is categorized into its feature class according to its weight. For example, if there are 4 features $\{F_1, F_2, F_3,F_4\}$ with weights $\{0.3, 0.4, 0.15, 0.15\}$ and each feature is classified into $\{\textit{average}, \textit{good}, \textit{good},\textit{bad}\}$ respectively, then the performance category belongs to the category with the most weight, i.e. category good, as explained by equation \ref{eq:overallClassification}. 
 
