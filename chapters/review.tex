@@ -20,6 +20,7 @@ The purpose of this literature review is to study and analyze various researches
 \end{enumerate}
 
 \section{Haptics}
+\label{section:hapticLit}
 Haptic is a relatively recent technological advancement. It simulates senses of movement and touch to in turn, reproduce the sensations to be felt by a user indirectly as if interacting with physical objects; it is the sensation and manipulation through touch. Haptics uses the sense of touch to be able to display emotions, make technology interactive, experience virtual reality, smart surveillance, gaming, and much more \cite{affHaptics}. 
 
 
@@ -55,7 +56,7 @@ Haptic sensing capabilities are based on the nerves in the skin, tissue and musc
 Characteristics that influence the haptic perception in terms of current applied includes the strength of applied current, applied duration, impulse form, impulse frequency, and impulse duration. The form of impulse mostly follows characteristics of a sine wave, a square wave, or a saw tooth wave. EMS typically uses frequencies between 1 Hz and 1 kHz. With short impulses of 100 us the skin resistance decreases and with long pulse duration the skin resistance increases. For contacting a muscle, impulse duration of up to 400 us are typically used \cite{emsDesign, toolkit}. There are a number of variations of positioning the EMS on the body that result in different muscles being stimulated, each depending on the action for which feedback should be applied. 
 
 \section{Pose Estimation and Evaluation}
-
+\label{section:openposeLit}
 \subsection{Pose Estimation using Openpose}
 Pose estimation is a technique that detects human figures using input images and/or videos to determine the coordinate location of certain body parts. For our project, pose estimation is required in order to detect the movement of the user. The pose estimation is used to determine the specific pose of the user at a particular frame for future evaluation and analysis. Several applications are able to use detected key points for further applications like mesh reconstruction, but OpenPose is the only existing method that can provide whole-body pose estimation with relative accuracy \cite{wholebodyPoseEst}. OpenPose's runtime is proportional to the number of people in the image, which means that whole-body estimation becomes extremely costly  for multiple people at the same time \cite{wholebodyPoseEst}. A technique to resolve this problem is to resort to multi-task learning (MTL). However, since our project only works to detect a single person, it does not require this particular feature to be available. 
 
@@ -89,7 +90,6 @@ Idris in \cite{Idris} also discusses an EF (extrinsic feedback) based approach t
 
 A recent research conducted in 2019 presents a computational framework for automating the process of measuring movement quality in full body physical activities. Starting from motion capture data, the framework computes low-level (e.g. limb velocity) and high-level (e.g. synchronization between different limbs) movement features. Then, this vector of features is integrated to compute a value aiming at providing a quantitative assessment of movement quality, approximating the evaluation an external expert observer would give of the same sequence of movements \cite{movementQuality}. Pose Trainer \cite{poseCorrect} is an application that acts as a virtual workout trainer. It captures user's motion and compares it with stored dataset. It returns what went wrong in the pose. 
 
-[[[[[[[[[[[[[[[[[[[[[discuss that paper used and differences]]]]]]]]]]]]]]]]]]]]]
 
 
 
